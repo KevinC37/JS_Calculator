@@ -1,0 +1,268 @@
+* {
+  margin: 0;
+  padding: 0;
+  transition: 0.7s ease;
+}
+
+.calculator_container {
+  width: 376px;
+  height: 812px;
+  margin: 0px auto;
+}
+
+#calculator_main {
+  background: #FAFAFA;
+  width: 376px;
+  height: 812px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 30px;
+}
+
+.switch input {
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+
+.slider {
+  position: absolute;
+  width: 80px;
+  height: 40px;
+  left: 0px;
+  top: 6px;
+  background: #E6E6E6;
+  border-radius: 66px;
+  transition: 0.7s ease;
+}
+
+.slider:before {
+position: absolute;
+width: 32px;
+height: 32px;
+left: 4px;
+top: 4px;
+content: "";
+background: #FAFAFA;
+box-shadow: 0px 100px 179px rgba(0, 0, 0, 0.22), 0px 36.5016px 65.3379px rgba(0, 0, 0, 0.151796), 0px 17.7209px 31.7204px rgba(0, 0, 0, 0.122384), 0px 8.6871px 15.5499px rgba(0, 0, 0, 0.097616);
+border-radius: 66px;
+transition: 0.7s ease;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.slider.round {
+  border-radius: 30px;
+}
+.slider:after {
+  position:  absolute;
+  width: 16px;
+  height: 16px;
+  top: 12px;
+  left: 12px;
+  content: "";
+  border-radius: 50%;
+  background: #E5E5E5;;
+  transition: 0.7s ease;
+}
+
+
+
+input:checked + .slider:before  {
+  transform: translateX(36px);
+  background: #FAFAFA;
+  box-shadow: 0px 100px 179px rgba(0, 0, 0, 0.22), 0px 36.5016px 65.3379px rgba(0, 0, 0, 0.151796), 0px 17.7209px 31.7204px rgba(0, 0, 0, 0.122384), 0px 8.6871px 15.5499px rgba(0, 0, 0, 0.097616);
+}
+
+
+input:checked + .slider::after  {
+  transform: translateX(44px);
+  width: 16px;
+  height: 8px; 
+  top: 16px;
+  left: 44px;
+  transform: rotate(270deg);
+  border-radius: 8px 8px 0 0;
+  background: #8888AE;
+  
+}
+
+input:checked + .slider {
+  background: #3C3C4F;
+}
+
+#history {
+width: 344px;
+height: 104px;
+left: 16px;
+top: 134.08px;
+margin-top: 42px;
+
+font-family: Work Sans;
+font-style: normal;
+font-weight: 600;
+font-size: 44px;
+line-height: 52px;
+
+display: flex;
+align-items: flex-end;
+text-align: right;
+
+/* identical to box height */
+text-align: right;
+
+overflow: hidden;
+resize: none;
+scroll-behavior: smooth;
+
+background: transparent;
+border: 0px;
+
+color: #555573;
+}
+
+#text {
+
+width: 340px;
+height: 113px;
+left: 16px;
+top: 275.08px;
+
+display: flex;
+justify-content: right;
+
+font-family: Work Sans;
+font-style: normal;
+font-weight: 600;
+font-size: 96px;
+line-height: 113px;
+
+/* identical to box height */
+letter-spacing: -0.04em;
+
+color: #10101E;
+}
+
+.screen {
+  padding-left: 16px;
+  padding-top: 10px;
+}
+
+
+#buttons {
+  padding-top: 65px;
+  display: grid;
+  column-gap: 8px;
+  row-gap: 8px;
+
+  grid-template-rows: repeat(5, 80px);
+  grid-template-columns: repeat(4, 80px);
+
+  justify-content: center;
+  
+}
+
+#buttons > * {
+
+width: 80px;
+height: 80px;
+
+border: none;
+background: #F0F0F0;;
+border-radius: 113px;
+color: rgba(16, 16, 30, 1);
+
+font-family: Work Sans;
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 38px;
+
+/* identical to box height */
+text-align: center;
+}
+
+#buttons .first_row {
+  color: #FF7340;
+}
+
+#backspace_Icon {
+  margin-top: 7px;
+  margin-right: 1px;
+}
+
+#equal {
+  background: #FF7340;
+  color: #fff;
+}
+
+.backspace_svg_1_dark {
+
+  fill: #E1E1FF;
+}
+
+.backspace_svg_2_dark {
+  fill: #28283F;
+}
+
+.multiply_dark {
+  fill: #E1E1FF;
+}
+
+@media only screen and (max-width: 375px) {
+* {
+  transform: scale(0.95);
+}
+
+.calculator_container {
+  margin-left: -5px;
+}
+body {
+  margin-top: -75px;
+  overflow-y: hidden;
+}
+}
+
+@media only screen and (max-height: 812px) {
+  * {
+    transform: scale(0.95);
+  }
+
+  body {
+    margin-top: -75px;
+    overflow-y: hidden;
+  }
+}
+
+
+#sqrt_icon {
+  margin-top: 6.5px;
+}
+
+#buttons > button:not(#equal):hover {
+  transition: 0.1s;
+  background-color: rgba(224, 224, 224, 1);
+}
+
+#buttons > button:not(#equal):active {
+  transition: 0.1s;
+  background-color: rgba(210, 210, 214, 1);
+}
+
+#equal {
+  transition: 0.1s;
+}
+
+#equal:hover {
+background-color: #FF7F51;
+}
+
+#equal:active {
+  background-color: #FF5314;
+}
