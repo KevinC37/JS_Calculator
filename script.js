@@ -523,4 +523,8 @@ window.addEventListener("keydown", (e) => {
 });
 
 //Calling functions
+window.onload = () => {
+  document.getElementById("lightDarkToggle").checked = false;
+  console.log("load event detected!");
+};
 clear();
