@@ -2,8 +2,9 @@
   margin: 0;
   padding: 0;
   transition: 0.7s ease;
-  outline: none;
 }
+
+button {outline: none !important;}
 
 .calculator_container {
   width: 376px;
